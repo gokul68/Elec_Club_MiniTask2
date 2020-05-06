@@ -11,3 +11,16 @@ To register the motion of the mouse, a GY-521 accelerometer can be used. Acceler
 Advantages of this approach:- Cheap and easy to implement.
 
 Disadvantages:- The python code will have to be running while the mouse is connected. Also, reading data from the bluetooth module in python might be tough.
+
+# 2. Arduino Anti-dog Trash Can
+## Problem statement:-
+A trash can that ensures that a dog doesn't take trash from it.
+
+## Ideation:-
+Currently, the project makes use of a button to check if the trash can is open for more than 5 seconds and if it is, it plays an audio to make the dog go away. However, the disadvantage of this is that it can mistake the owner for the dog.
+
+I suggest using two IR proximity sensors to check if the dog is trying to open the can. One should be be near the top of the can and the other should be near the bottom. Both of them should be opposite to the hinge of the lid. The states of these two sensors can be compared to find out if it is a dog or a human near the can. If it is only the bottom one that is trigerred then it is a dog but if it is a human both will be trigerred. If the dog tries to trick the senosors by standing on the side, then only the top sensor will get trigerred when it tries to open it. The data from the sensors will be sent to an Arduino Uno which will play the audio if the required conditions are satisfied.
+
+Advantages of this approach:- Will be able to distinguish between human and dog.
+
+Disadvantages:- Will be tougher to implement. 
